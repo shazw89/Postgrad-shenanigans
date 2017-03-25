@@ -173,7 +173,36 @@
 # end
 # print_custom_message { puts 'This is the block' }
 
-def multiply
-  yield(3, 5) if block_given?
+# def multiply
+#   yield(3, 5) if block_given?
+# end
+# puts multiply {|x, y| x * y}
+
+# def subtract(&block)
+#   block.call(9, 6)
+# end
+# puts subtract {|x,y| x-y}
+#
+# triple = Proc.new do |x|
+#   puts "#{x * 3}"
+# end
+# [1,2,3].each(&triple)
+# triple.class
+
+# triple = Proc.new { |x| x*3 }
+# puts triple.(2,4,6)
+#
+# quad = lambda { |x| puts "#{x*4}" }
+# [1,2,3].each(&quad)
+# puts quad.(6, 9)
+
+def whatevs
+  yield
 end
-puts multiply {|x, y| x * y}
+whatevs { puts 'Yeah' }
+
+even = Proc.new { |x| puts x if x.even? }
+[1,2,3,4].each(&even)
+
+print_key = lambda { |key| puts "#{key}"}
+[colour: "blue", size: "hefty", mood: "sad"].each(&print_key)
