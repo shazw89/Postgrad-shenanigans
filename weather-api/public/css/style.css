@@ -1,0 +1,74 @@
+html, body {
+  margin:0; padding:0;
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.viewport {
+  position: absolute;
+  top:0; right: 0; bottom:0; left:0;
+  background-image: url('../images/weathervane.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Cinzel', serif;
+}
+
+.weather_stats {
+  color: white;
+  height: 250px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom:0;
+/*  transform: translateY(200%);*/
+/*  opacity:0;*/
+  transition: transform 0.3s ease;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.74+100 */
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.74) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.74) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.74) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.weather_stats.is-visible {
+  opacity:1;
+  transform: translateY(0%);
+}
+
+.flex-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+#weather_text {
+  margin-left: 30px;
+  padding: 10px;
+}
+
+
+.highslows {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+#high_temp{
+  margin-left: 30px;
+  padding: 10px;
+}
+
+#low_temp{
+  padding: 10px;
+}
+
+#current_temp {
+  font-size: 6em;
+  margin-left: 35px
+}
